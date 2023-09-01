@@ -1,4 +1,3 @@
-# Battery_Management_System
 
 # Battery Management System
 A backend system for a web application that supports the management and monitoring of batteries deployed on electric vehicles. The system allows batteries to send data to the backend via a web API and provides users with various ways to access and analyze battery information.
