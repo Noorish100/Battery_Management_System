@@ -45,7 +45,7 @@ Users of the system can access battery data using plain HTTP or REST APIs. The f
 - STS
   
 ### Flow Diagram
-<img width="600" alt="flowed 2477" src="https://github.com/Noorish100/Battery_Management_System/assets/97448658/40927898-36d2-4cb3-96b2-759547a77312">
+<img width="500" alt="flowdm2 2478" src="https://github.com/Noorish100/Battery_Management_System/assets/97448658/2f423fcb-18ca-485a-8b0c-6ed26649a3b9">
 
 ### UML Diagram
 ![uml](https://github.com/Noorish100/Battery_Management_System/assets/97448658/af618c14-ad60-4ee0-afb0-c7337d8ef163)
