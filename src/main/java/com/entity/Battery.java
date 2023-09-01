@@ -17,6 +17,7 @@ import lombok.NoArgsConstructor;
 public class Battery {
 	
 	@Id
+	private Integer Serno;
 	private Integer batteryId;
 	private String current;
 	private String voltage;

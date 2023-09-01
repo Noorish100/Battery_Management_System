@@ -11,7 +11,7 @@ public interface UserService {
 	
 	String saveUser(BatteryUser battery);
 	
-	Battery getInfoOfBattery(Integer id) throws Exception;
+	List<Battery> getInfoOfBattery(Integer id) throws Exception;
 	  
 	  String getSpecificInfoOfBattery(Integer id,List<String> namesOfDetail) throws BatteryException ;
 	  

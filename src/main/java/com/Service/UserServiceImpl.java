@@ -18,7 +18,7 @@ import com.exception.BatteryException;
 @Service
 public class UserServiceImpl implements UserService {
 	
-	String[] con = { "current", "voltage", "temperature", "time" };
+	String[] con = { "current", "voltage", "temprature", "time","batteryId" };
 	
 	@Autowired
 	private BatteryRepository batteryRepository;
@@ -27,11 +27,11 @@ public class UserServiceImpl implements UserService {
 	private UserRepo userRepo;
 	
 	@Override
-	public Battery getInfoOfBattery(Integer id) throws BatteryException {
+	public List<Battery> getInfoOfBattery(Integer id) throws BatteryException {
 		
-		Optional<Battery> existedBattery = batteryRepository.findById(id);
+		Optional<List<Battery>> existedBattery = batteryRepository.findByBatteryId(id);
 
-		Battery b = existedBattery.get();
+		List<Battery> b = existedBattery.get();
 
 		if (existedBattery.isEmpty()) {
 			throw new BatteryException("not Found");
@@ -41,28 +41,35 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public String getSpecificInfoOfBattery(Integer id, List<String> namesOfDetail) throws BatteryException {
-		Optional<Battery> existedBattery = batteryRepository.findById(id);
+		Optional<List<Battery>> existedBattery = batteryRepository.findByBatteryId(id);
 		String ans = "";
-		Battery b = existedBattery.get();
+		List<Battery> b = existedBattery.get();
 
 		if (existedBattery.isEmpty()) {
 			throw new BatteryException("not Found");
 		}
+		
+		for(Battery batt:b) {
 		for (int i = 0; i < con.length; i++) {
 			if (namesOfDetail.contains(con[i])) {
+				
 				if (con[i].equalsIgnoreCase("current")) {
-					ans = ans + " " + "Current" + "= " + b.getCurrent();
+					ans = ans + " " + "Current" + "= " + batt.getCurrent();
 				}
 				if (con[i].equalsIgnoreCase("voltage")) {
-					ans = ans + " " + "Voltage" + "= " + b.getVoltage();
+					ans = ans + " " + "Voltage" + "= " + batt.getVoltage();
 				}
 				if (con[i].equalsIgnoreCase("temperature")) {
-					ans = ans + " " + "Temperature" + "= " + b.getTemprature();
+					ans = ans + " " + "Temperature" + "= " + batt.getTemprature();
 				}
 				if (con[i].equalsIgnoreCase("time")) {
-					ans = ans + " " + "time" + "= " + b.getTime();
+					ans = ans + " " + "time" + "= " + batt.getTime();
+				}
+				if (con[i].equalsIgnoreCase("batteryid")) {
+					ans = ans + " " + "BatteryId" + "= " + batt.getBatteryId();
 				}
 
+			}
 			}
 		}
 		return ans;
@@ -72,31 +79,36 @@ public class UserServiceImpl implements UserService {
 	public Object getSpecificInfoOfBatteryInTimeRange(Integer id, String[] namesOfDetail, LocalDateTime startTime,
 			LocalDateTime endTime) {
 
-		Optional<Battery> batteryData = batteryRepository.findDataBetweenTimeRange(id, startTime, endTime);
+		Optional<List<Battery>> batteryData = batteryRepository.findDataBetweenTimeRange(id, startTime, endTime);
 		List<Object> result = new ArrayList<>();
 
 		if (batteryData.isEmpty()) {
 			return "Sorry Query result empty set ";
 		}
-		Battery battery = batteryData.get();
+		List<Battery> battery = batteryData.get();
 
+		for(Battery batt:battery) {
 		for (int i = 0; i < namesOfDetail.length; i++) {
 			switch (namesOfDetail[i]) {
 			case "current":
-				result.add("current=" + battery.getCurrent());
+				result.add("current=" + batt.getCurrent());
 				break;
 			case "voltage":
-				result.add("voltage=" + battery.getVoltage());
+				result.add("voltage=" + batt.getVoltage());
 				break;
 			case "time":
-				result.add("time=" + battery.getTime());
+				result.add("time=" + batt.getTime());
 				break;
 			case "temprature":
-				result.add("temprature=" + battery.getTemprature());
+				result.add("temprature=" + batt.getTemprature());
+				break;
+			case "batteryId":
+				result.add("batteryid=" + batt.getBatteryId());
 				break;
 			// Add cases for other columns as needed
 
 			}
+		}
 		}
 		return result;
 	}

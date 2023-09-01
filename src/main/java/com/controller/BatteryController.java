@@ -20,7 +20,7 @@ import com.entity.Battery;
 import com.exception.BatteryException;
 
 @RestController
-@RequestMapping("/Battery")
+@RequestMapping("/battery")
 public class BatteryController {
 
 	@Autowired

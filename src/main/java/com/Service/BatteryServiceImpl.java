@@ -19,7 +19,7 @@ public class BatteryServiceImpl implements BatteryService {
 
 	@Override
 	public String saveBattery(Battery battery) {
-		Optional<Battery> existedBattery = batteryRepository.findById(battery.getBatteryId());
+		Optional<Battery> existedBattery = batteryRepository.findById(battery.getSerno());
 		if (existedBattery.isPresent()) {
 			return "already present";
 		}

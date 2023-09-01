@@ -23,11 +23,10 @@ import com.exception.BatteryException;
 @RestController
 @RequestMapping("/User")
 public class UserController {
-	
-	
+
 	@Autowired
 	private UserServiceImpl userServiceImpl;
-	
+
 	@PostMapping("/save")
 	public ResponseEntity<String> saveAllMovies(@RequestBody BatteryUser user) throws IOException {
 
@@ -35,12 +34,9 @@ public class UserController {
 
 	}
 
-	
-	
 	@GetMapping("/getInfo/{id}")
-	public ResponseEntity<Battery> getInfo(@PathVariable("id") Integer id) throws BatteryException {
-		return new ResponseEntity<Battery>(userServiceImpl.getInfoOfBattery(id), HttpStatus.OK);
-
+	public ResponseEntity<List<Battery>> getInfo(@PathVariable("id") Integer id) throws BatteryException {
+		return new ResponseEntity<List<Battery>>(userServiceImpl.getInfoOfBattery(id), HttpStatus.OK);
 	}
 
 	@GetMapping("/specificInfo")
