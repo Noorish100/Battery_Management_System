@@ -7,7 +7,8 @@ A backend system for a web application that supports the management and monitori
 - Overview
 - Use Cases
 - Technical Stacks
-- Flow Daigram
+- Flow Diagram
+- UML Diagram
 - Database Design
 - API Endpoints
 - How to Use
@@ -42,10 +43,12 @@ Users of the system can access battery data using plain HTTP or REST APIs. The f
 - Hibernate
 - Core Java
 - Postman
+- STS
+  
 ### Flow Diagram
 <img width="600" alt="flowed 2477" src="https://github.com/Noorish100/Battery_Management_System/assets/97448658/40927898-36d2-4cb3-96b2-759547a77312">
 
-### URL Diagram
+### UML Diagram
 ![uml](https://github.com/Noorish100/Battery_Management_System/assets/97448658/af618c14-ad60-4ee0-afb0-c7337d8ef163)
 
 ### Installation & Run
