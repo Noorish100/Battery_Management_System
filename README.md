@@ -42,12 +42,15 @@ Users of the system can access battery data using plain HTTP or REST APIs. The f
 - Hibernate
 - Core Java
 - Postman
-### Flow Daigram
-<img width="429" alt="flowdm" src="https://github.com/Sab01123/testTibcoRepo1/assets/104069112/0492fbef-9542-41cc-82ee-1d5f1f2b62d6">
+### Flow Diagram
+<img width="329" alt="flowed 2477" src="https://github.com/Noorish100/Battery_Management_System/assets/97448658/40927898-36d2-4cb3-96b2-759547a77312">
+
+### URL Diagram
+<img width="329" alt="flowed 2477" src="![uml](https://github.com/Noorish100/Battery_Management_System/assets/97448658/466113c8-2dc0-4c77-8c5e-f0d1e927c75b)>
 
 ### Installation & Run
 - Before running the API server, you have to update the database configuration inside the application.properties file
-- Update the port number, username and password as per your local database configuration
+- Update the port number, username, and password as per your local database configuration
 ````
 server.port=8889
 #db specific properties
