@@ -60,9 +60,9 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ````
 ### API Endpoints
-- `Battery/getInfo/{id}:` Get all information of a specific battery.
-- `Battery/specificInfo ? id= batteryId & list=field1 & list = field2 and so on:` Get the  specific details of battery.
-- `Battery/specificInfoBetweenTimeRange ? id= batteryId & list=field1 & list = field2.... & stTime = startTime & endTime = endTime:` Get the  specific details of battery  between a given start and end time.
+- `User/getInfo/{id}:` Get all information of a specific battery.
+- `User/specificInfo ? id= batteryId & list=field1 & list = field2 and so on:` Get the  specific details of battery.
+- `User/specificInfoBetweenTimeRange ? id= batteryId & list=field1 & list = field2.... & stTime = startTime & endTime = endTime:` Get the  specific details of battery  between a given start and end time.
 
 ### How to Use
 Clone the repository:
