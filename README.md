@@ -43,7 +43,7 @@ Users of the system can access battery data using plain HTTP or REST APIs. The f
 - Core Java
 - Postman
 ### Flow Diagram
-<img width="329" alt="flowed 2477" src="https://github.com/Noorish100/Battery_Management_System/assets/97448658/40927898-36d2-4cb3-96b2-759547a77312">
+<img width="400" alt="flowed 2477" src="https://github.com/Noorish100/Battery_Management_System/assets/97448658/40927898-36d2-4cb3-96b2-759547a77312">
 
 ### URL Diagram
 <img width="200" alt="flowed 2000" src="![uml](https://github.com/Noorish100/Battery_Management_System/assets/97448658/466113c8-2dc0-4c77-8c5e-f0d1e927c75b)>
