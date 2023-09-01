@@ -74,46 +74,35 @@ public class BatteryServiceImpl implements BatteryService {
 	@Override
 	public Object getSpecificInfoOfBatteryInTimeRange(Integer id, String[] namesOfDetail, LocalDateTime startTime,
 			LocalDateTime endTime) {
-//		String s = "";
-//		for (int i = 0; i < namesOfDetail.length; i++) {
-//			if (i < namesOfDetail.length - 1) {
-//				s = s + "bd." + namesOfDetail[i] + ",";
-//			} else {
-//				s = s + "bd." + namesOfDetail[i];
-//			}
-//		}
-		
-		 Optional<Battery> batteryData = batteryRepository.findDataBetweenTimeRange(id, startTime, endTime);
-	        List<Object> result = new ArrayList<>();
-	        
-	      if(batteryData.isEmpty()){
-	    	  return "Sorry Query result empty set ";
-	      }
-	      Battery battery =batteryData.get();
 
-	        
-	        	for(int i=0;i<namesOfDetail.length;i++) {
-	            switch (namesOfDetail[i]) {
-	                case "current":
-	                    result.add("current="+battery.getCurrent());
-	                    break;
-	                case "voltage":
-	                    result.add("voltage="+battery.getVoltage());
-	                    break;
-	                case "time":
-	                    result.add("time="+battery.getTime());
-	                    break;
-	                case "temprature":
-	                    result.add("temprature="+battery.getTemprature());
-	                    break;
-	                // Add cases for other columns as needed
-	             
-	            }
-	        	}
-	        
-        
-	        return result;
-//	  return batteryRepository.findDataBetweenTimeRange(id, startTime, endTime);
+		Optional<Battery> batteryData = batteryRepository.findDataBetweenTimeRange(id, startTime, endTime);
+		List<Object> result = new ArrayList<>();
+
+		if (batteryData.isEmpty()) {
+			return "Sorry Query result empty set ";
+		}
+		Battery battery = batteryData.get();
+
+		for (int i = 0; i < namesOfDetail.length; i++) {
+			switch (namesOfDetail[i]) {
+			case "current":
+				result.add("current=" + battery.getCurrent());
+				break;
+			case "voltage":
+				result.add("voltage=" + battery.getVoltage());
+				break;
+			case "time":
+				result.add("time=" + battery.getTime());
+				break;
+			case "temprature":
+				result.add("temprature=" + battery.getTemprature());
+				break;
+			// Add cases for other columns as needed
+
+			}
+		}
+		return result;
 	}
 
+	// TODO: handle exception
 }
