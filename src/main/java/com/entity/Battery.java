@@ -23,6 +23,4 @@ public class Battery {
 	private String temprature;
 	private LocalDateTime time;
 	
-	
-
 }
